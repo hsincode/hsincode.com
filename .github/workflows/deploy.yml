@@ -32,6 +32,22 @@ jobs:
           node-version: '24'
       - name: Install Vercel CLI
         run: npm install --global vercel@59.14.0
+      - name: Verify deployment target
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          const headers = { Authorization: `Bearer ${process.env.VERCEL_TOKEN}` };
+          const userResponse = await fetch('https://api.vercel.com/v2/user', { headers });
+          const user = await userResponse.json();
+          console.log('Vercel account:', user.user?.username ?? user.error?.message);
+          if (user.user?.username !== 'hsincode') throw new Error('VERCEL_TOKEN must belong to the hsincode account.');
+          const query = new URLSearchParams({ teamId: process.env.VERCEL_ORG_ID });
+          const response = await fetch(`https://api.vercel.com/v9/projects/${process.env.VERCEL_PROJECT_ID}?${query}`, { headers });
+          const project = await response.json();
+          if (!response.ok) throw new Error(`Project access failed (${response.status}): ${project.error?.message}`);
+          if (project.accountId !== process.env.VERCEL_ORG_ID || project.name !== 'hsincode.com') throw new Error('Unexpected deployment target.');
+          console.log('Verified HsinCode project:', project.name);
+          NODE
       - name: Pull production configuration
         run: vercel pull --yes --environment=production --token "$VERCEL_TOKEN"
       - name: Build
