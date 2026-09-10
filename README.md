@@ -13,3 +13,4 @@ Actionsの `Deploy to Vercel` から手動実行もできます。
 
 リポジトリのActions secretsに `VERCEL_TOKEN`、`VERCEL_ORG_ID`、`VERCEL_PROJECT_ID` を設定します。
 デプロイ先はVercelのHsinCodeチームにある `hsincode.com` プロジェクトです。
+CIはVercelの公式APIを使用し、HsinCodeチームに限定したトークンで動作します。
