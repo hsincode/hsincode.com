@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="dark">
     <meta name="description" content="HsinCode">
-    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#121716">
     <meta property="og:type" content="website">
     <meta property="og:title" content="HsinCode">
     <meta property="og:description" content="HsinCode">
@@ -17,27 +16,29 @@
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://hsincode.com/">
     <link rel="icon" type="image/png" href="./assets/avatar.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./samples/samples.css">
+    <script src="./samples/motion.js" type="module"></script>
     <title>HsinCode</title>
   </head>
-  <body>
-    <div class="page">
-      <header class="header" aria-label="HsinCode">
-        <span class="mark" aria-hidden="true">心</span>
-        <span class="handle">@hsincode</span>
-      </header>
-
-      <main>
-        <img class="avatar" src="./assets/avatar.png" width="80" height="80" alt="HsinCodeのプロフィールアイコン" fetchpriority="high">
-        <h1>HsinCode<span class="period" aria-hidden="true">.</span></h1>
-        <a class="github" href="https://github.com/hsincode">
+  <body class="concept resonance home" data-concept="resonance">
+    <canvas class="wave-canvas" aria-hidden="true"></canvas>
+    <div class="concept-page">
+      <main class="resonance-main">
+        <img class="avatar" src="./assets/avatar.png" width="64" height="64" alt="HsinCodeのプロフィールアイコン" fetchpriority="high">
+        <p class="eyebrow">@hsincode</p>
+        <h1>HsinCode<span class="accent" aria-hidden="true">.</span></h1>
+        <a class="outbound" href="https://github.com/hsincode">
           <span>GitHub</span>
-          <img src="./assets/arrow-up-right.svg" width="20" height="20" alt="" aria-hidden="true">
+          <img src="./assets/arrow-up-right.svg" width="22" height="22" alt="" aria-hidden="true">
         </a>
       </main>
 
-      <footer>
+      <footer class="concept-footer">
         <span>hsincode.com</span>
+        <button class="motion-toggle" type="button" aria-pressed="false" aria-label="アニメーションを一時停止" title="アニメーションを一時停止" hidden>
+          <img class="pause-icon" src="./assets/pause.svg" width="18" height="18" alt="">
+          <img class="play-icon" src="./assets/play.svg" width="18" height="18" alt="">
+        </button>
         <a href="https://github.com/hsincode/hsincode.com" lang="en">Source</a>
       </footer>
     </div>

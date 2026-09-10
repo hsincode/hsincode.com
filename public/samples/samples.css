@@ -38,6 +38,10 @@ button[hidden] { display: none; }
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+.home .concept-page { grid-template-rows: 112px 1fr auto; }
+.home .resonance-main { grid-row: 2; }
+.home .concept-footer { grid-row: 3; display: grid; grid-template-columns: 1fr auto 1fr; }
+.home .concept-footer > a { justify-self: end; }
 .sample-header {
   display: flex;
   justify-content: space-between;
@@ -171,6 +175,7 @@ button[hidden] { display: none; }
 
 @media (max-width: 700px) {
   .concept-page, .gallery-page { width: calc(100% - 48px); }
+  .home .concept-page { grid-template-rows: 88px 1fr auto; }
   .sample-header { min-height: 88px; font-size: 12px; }
   .edition { font-size: 11px; }
   .concept h1, .resonance-main h1 { font-size: 52px; }
