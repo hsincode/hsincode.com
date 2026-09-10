@@ -78,17 +78,8 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-.period,
-.heart {
+.period {
   color: var(--accent);
-}
-
-.intro {
-  margin: 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.9;
-  text-wrap: pretty;
 }
 
 .github {
@@ -161,10 +152,6 @@ footer a:hover {
 
   h1 {
     font-size: 48px;
-  }
-
-  .intro {
-    font-size: 15px;
   }
 
   footer {

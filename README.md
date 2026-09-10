@@ -6,6 +6,7 @@ HTMLとCSSだけの静的サイトです。`public/index.html` をブラウザ�
 
 Vercelで `public` ディレクトリを公開します。
 
-更新は `vercel --prod` でデプロイします。初回は既存の `hsincode.com` プロジェクトにリンクしてください。
+`main` へのpushでGitHub ActionsからVercelの本番環境へデプロイします。
+Actionsの `Deploy to Vercel` から手動実行もできます。
 
-GitHubへのpushによる自動デプロイは未接続です。
+リポジトリのActions secretsに `VERCEL_TOKEN`、`VERCEL_ORG_ID`、`VERCEL_PROJECT_ID` を設定します。
