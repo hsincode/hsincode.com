@@ -1,14 +1,18 @@
 @font-face{font-family:'Unbounded';src:url(../unbounded.woff2) format('woff2');font-weight:200 400;font-display:swap}
 @font-face{font-family:'Martian Mono';src:url(../martian-mono.woff2) format('woff2');font-weight:300 500;font-stretch:75% 112.5%;font-display:swap}
+:root{--k:1;--W:1440;--H:900;--cx:954;--cy:450;--si:1.104;--st:1;--ty:10;--cxp:66.3;--cyp:50}
 html{background:#020408;color-scheme:dark}
-body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;overflow-x:hidden}
+body{margin:0;overflow:hidden}
 a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
-.stage-wrap{position:relative;overflow:hidden}
-.stage-wrap.d{width:calc(1440px * var(--s, 1));height:calc(900px * var(--s, 1))}
-.stage-wrap.m{display:none;width:calc(390px * var(--s, 1));height:calc(844px * var(--s, 1))}
-.stage{position:absolute;left:0;top:0;transform:scale(var(--s, 1));transform-origin:0 0}
-@media (max-width:899px) and (max-aspect-ratio:9/10){.stage-wrap.d{display:none}.stage-wrap.m{display:block}}
+.stage-wrap{position:fixed;inset:0;overflow:hidden}
+.stage{position:absolute;left:0;top:0;transform:scale(var(--k));transform-origin:0 0}
+.stage-wrap.m{display:none}
+.glyph-defs{position:absolute}
+@media (max-width:899px) and (max-aspect-ratio:9/10){
+:root{--W:390;--H:844;--cx:195;--cy:318;--si:1;--cxp:50;--cyp:37.7}
+.stage-wrap.d{display:none}.stage-wrap.m{display:block}
+}
 .ap-grain-img{background-image:url(grain.png);background-size:128px 128px}
 .ap-r600{animation:ap-spin 600s linear infinite}
 .ap-r480{animation:ap-spin 480s linear infinite}
@@ -94,7 +98,7 @@ a:hover{color:inherit}
 @keyframes ap-drift2{0%{transform:translate(5px,-3px)}100%{transform:translate(-5px,3px)}}
 @keyframes ap-drift3{0%{transform:translate(-9px,-5px)}100%{transform:translate(9px,5px)}}
 @keyframes ap-breathe{0%,100%{opacity:1}50%{opacity:.72}}
-@keyframes ap-play{to{transform:translateX(1296px)}}
+@keyframes ap-play{to{transform:translateX(100%)}}
 @keyframes ap-frame{from,to{opacity:1}}
 @keyframes ap-hide{from,to{opacity:0}}
 .ap-sp{display:inline-block;overflow:hidden;height:12px;vertical-align:top}.ap-sp>span{display:block}.ap-sp>span>span{display:block;height:12px;line-height:12px}.ap-tcF{animation:ap-s24 1s steps(24,end) infinite}.ap-tcS1{animation:ap-s10 10s steps(10,end) infinite}.ap-tcS10{animation:ap-s6 60s steps(6,end) infinite}.ap-tcM1{animation:ap-s10 600s steps(10,end) infinite}.ap-tcM10{animation:ap-s6 3600s steps(6,end) infinite}.ap-tcH{animation:ap-s24 86400s steps(24,end) infinite}.ap-uS1{animation:ap-s10 10s steps(10,end) infinite}.ap-uS10{animation:ap-s6 60s steps(6,end) infinite}.ap-uM1{animation:ap-s10 600s steps(10,end) infinite}.ap-uM10{animation:ap-s6 3600s steps(6,end) infinite}.ap-uH{animation:ap-s24 86400s steps(24,end) infinite}.ap-bT{animation:ap-s10 .269444s steps(10,end) infinite}.ap-bO{animation:ap-s10 2.694444s steps(10,end) infinite}.ap-bD{animation:ap-s36 97s steps(36,end) infinite}.ap-bH{animation:ap-bh 97s linear infinite}@keyframes ap-s6{to{transform:translateY(-72px)}}@keyframes ap-s10{to{transform:translateY(-120px)}}@keyframes ap-s24{to{transform:translateY(-288px)}}@keyframes ap-s36{to{transform:translateY(-432px)}}@keyframes ap-bh{0%,27.777%{transform:translateY(0)}27.778%,55.555%{transform:translateY(-12px)}55.556%,83.332%{transform:translateY(-24px)}83.333%,100%{transform:translateY(-36px)}}
@@ -189,7 +193,7 @@ a:hover{color:inherit}
 @keyframes am-drift2{0%{transform:translate(5px,-3px)}100%{transform:translate(-5px,3px)}}
 @keyframes am-drift3{0%{transform:translate(-9px,-5px)}100%{transform:translate(9px,5px)}}
 @keyframes am-breathe{0%,100%{opacity:1}50%{opacity:.72}}
-@keyframes am-play{to{transform:translateX(0px)}}
+@keyframes am-play{to{transform:translateX(100%)}}
 @keyframes am-frame{from,to{opacity:1}}
 @keyframes am-hide{from,to{opacity:0}}
 .am-sp{display:inline-block;overflow:hidden;height:11px;vertical-align:top}.am-sp>span{display:block}.am-sp>span>span{display:block;height:11px;line-height:11px}.am-tcF{animation:am-s24 1s steps(24,end) infinite}.am-tcS1{animation:am-s10 10s steps(10,end) infinite}.am-tcS10{animation:am-s6 60s steps(6,end) infinite}.am-tcM1{animation:am-s10 600s steps(10,end) infinite}.am-tcM10{animation:am-s6 3600s steps(6,end) infinite}.am-tcH{animation:am-s24 86400s steps(24,end) infinite}.am-uS1{animation:am-s10 10s steps(10,end) infinite}.am-uS10{animation:am-s6 60s steps(6,end) infinite}.am-uM1{animation:am-s10 600s steps(10,end) infinite}.am-uM10{animation:am-s6 3600s steps(6,end) infinite}.am-uH{animation:am-s24 86400s steps(24,end) infinite}.am-bT{animation:am-s10 .269444s steps(10,end) infinite}.am-bO{animation:am-s10 2.694444s steps(10,end) infinite}.am-bD{animation:am-s36 97s steps(36,end) infinite}.am-bH{animation:am-bh 97s linear infinite}@keyframes am-s6{to{transform:translateY(-66px)}}@keyframes am-s10{to{transform:translateY(-110px)}}@keyframes am-s24{to{transform:translateY(-264px)}}@keyframes am-s36{to{transform:translateY(-396px)}}@keyframes am-bh{0%,27.777%{transform:translateY(0)}27.778%,55.555%{transform:translateY(-11px)}55.556%,83.332%{transform:translateY(-22px)}83.333%,100%{transform:translateY(-33px)}}
@@ -200,43 +204,43 @@ a:hover{color:inherit}
 .am-dec-frame,.am-dec-final,.am-dec-final-h{animation:none}
 }
 @media (prefers-reduced-motion:reduce){.ap-loop,.am-loop{animation-play-state:paused}}
-.k0{position: relative; width: 1440px; height: 900px; overflow: hidden; background: #020408; color: #e6edf7; font-family: Unbounded, 'Helvetica Neue', sans-serif}
-.k1{position: absolute; left: -24px; top: -24px; width: 1488px; height: 948px; filter: blur(0.6px)}
+.k0{position: relative; width: calc(var(--W) * 1px); height: calc(var(--H) * 1px); overflow: hidden; background: #020408; color: #e6edf7; font-family: Unbounded, 'Helvetica Neue', sans-serif}
+.k1{position: absolute; inset: -24px; filter: blur(0.6px)}
 .k2{display: block; animation-delay: 0.3s; animation-duration: 2s}
-.k3{position: absolute; left: -24px; top: -24px; width: 1488px; height: 948px}
+.k3{position: absolute; inset: -24px}
 .k4{display: block; animation-delay: 0.5s; animation-duration: 2s}
 .k5{display: block; animation-delay: 0.7s; animation-duration: 2s}
-.k6{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; -webkit-mask-image: linear-gradient(90deg, transparent 600px, #000 860px); mask-image: linear-gradient(90deg, transparent 600px, #000 860px)}
-.k7{display: block; animation-delay: 1.9s; animation-duration: 2.4s}
-.k8{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0}
-.k9{animation-delay: 1.2s}
-.k10{animation-delay: 0.9s; animation-duration: 1.8s}
-.k11{animation-delay: 1.1s}
-.k12{animation-delay: 0.8s; animation-duration: 1.6s}
-.k13{animation-delay: 1s}
-.k14{animation-delay: 1.3s}
-.k15{animation-delay: 0.6s}
-.k16{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0; animation-delay: 2s; animation-duration: 1.6s}
-.k17{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0; width: 1440px; height: 900px; perspective: 1600px; perspective-origin: 1000px 450px; animation-delay: 2.1s}
-.k18{position: absolute; left: 570px; top: 20px; width: 860px; height: 860px; transform: rotateZ(-18deg) rotateX(62deg); transform-style: preserve-3d}
-.k19{position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-style: preserve-3d}
-.k20{position: absolute; right: -4px; top: 50%; width: 8px; height: 8px; margin-top: -4px; transform-style: preserve-3d}
-.k21{width: 8px; height: 8px; transform-style: preserve-3d}
-.k22{width: 8px; height: 8px; border-radius: 50%; background: #d8b46a; box-shadow: 0 0 10px #d8b46a, 0 0 3px #ffffff; transform: rotateX(-62deg) rotateZ(18deg)}
-.k23{position: absolute; left: 480px; top: -70px; width: 1040px; height: 1040px; transform: rotateZ(28deg) rotateX(70deg); transform-style: preserve-3d}
-.k24{position: absolute; right: -3px; top: 50%; width: 6px; height: 6px; margin-top: -3px; transform-style: preserve-3d}
-.k25{width: 6px; height: 6px; transform-style: preserve-3d}
-.k26{width: 6px; height: 6px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 8px rgba(143,208,255,0.9); transform: rotateX(-70deg) rotateZ(-28deg)}
-.k27{position: absolute; left: 400px; top: -150px; width: 1200px; height: 1200px; transform: rotateZ(8deg) rotateX(79deg); transform-style: preserve-3d}
-.k28{position: absolute; right: -2.5px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; transform-style: preserve-3d}
-.k29{width: 5px; height: 5px; transform-style: preserve-3d}
-.k30{width: 5px; height: 5px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 6px rgba(143,208,255,0.8); transform: rotateX(-79deg) rotateZ(-8deg)}
-.k31{position: absolute; left: 600px; top: 50px; width: 800px; height: 800px; animation-delay: 1.3s; animation-duration: 1.6s}
-.k32{width: 800px; height: 800px; display: block}
-.k33{display: block}
-.k34{position: absolute; left: 630px; top: 80px; width: 740px; height: 740px; animation-delay: 1.5s}
-.k35{width: 740px; height: 740px; display: block}
-.k36{font-stretch: 87.5%}
+.k6{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; transform-origin: 0 0; transform: translate(calc(var(--cx) * 1px - 1000px * var(--si)), calc(var(--cy) * 1px - 450px * var(--si))) scale(var(--si)); pointer-events: none}
+.k7{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; -webkit-mask-image: linear-gradient(90deg, transparent 600px, #000 860px); mask-image: linear-gradient(90deg, transparent 600px, #000 860px)}
+.k8{display: block; animation-delay: 1.9s; animation-duration: 2.4s}
+.k9{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0}
+.k10{animation-delay: 1.2s}
+.k11{animation-delay: 0.9s; animation-duration: 1.8s}
+.k12{animation-delay: 1.1s}
+.k13{animation-delay: 0.8s; animation-duration: 1.6s}
+.k14{animation-delay: 1s}
+.k15{animation-delay: 1.3s}
+.k16{animation-delay: 0.6s}
+.k17{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0; animation-delay: 2s; animation-duration: 1.6s}
+.k18{-webkit-mask-image: linear-gradient(90deg, transparent 480px, #000 700px); mask-image: linear-gradient(90deg, transparent 480px, #000 700px); position: absolute; left: 0; top: 0; width: 1440px; height: 900px; perspective: 1600px; perspective-origin: 1000px 450px; animation-delay: 2.1s}
+.k19{position: absolute; left: 570px; top: 20px; width: 860px; height: 860px; transform: rotateZ(-18deg) rotateX(62deg); transform-style: preserve-3d}
+.k20{position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-style: preserve-3d}
+.k21{position: absolute; right: -4px; top: 50%; width: 8px; height: 8px; margin-top: -4px; transform-style: preserve-3d}
+.k22{width: 8px; height: 8px; transform-style: preserve-3d}
+.k23{width: 8px; height: 8px; border-radius: 50%; background: #d8b46a; box-shadow: 0 0 10px #d8b46a, 0 0 3px #ffffff; transform: rotateX(-62deg) rotateZ(18deg)}
+.k24{position: absolute; left: 480px; top: -70px; width: 1040px; height: 1040px; transform: rotateZ(28deg) rotateX(70deg); transform-style: preserve-3d}
+.k25{position: absolute; right: -3px; top: 50%; width: 6px; height: 6px; margin-top: -3px; transform-style: preserve-3d}
+.k26{width: 6px; height: 6px; transform-style: preserve-3d}
+.k27{width: 6px; height: 6px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 8px rgba(143,208,255,0.9); transform: rotateX(-70deg) rotateZ(-28deg)}
+.k28{position: absolute; left: 400px; top: -150px; width: 1200px; height: 1200px; transform: rotateZ(8deg) rotateX(79deg); transform-style: preserve-3d}
+.k29{position: absolute; right: -2.5px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; transform-style: preserve-3d}
+.k30{width: 5px; height: 5px; transform-style: preserve-3d}
+.k31{width: 5px; height: 5px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 6px rgba(143,208,255,0.8); transform: rotateX(-79deg) rotateZ(-8deg)}
+.k32{position: absolute; left: 600px; top: 50px; width: 800px; height: 800px; animation-delay: 1.3s; animation-duration: 1.6s}
+.k33{width: 800px; height: 800px; display: block}
+.k34{display: block}
+.k35{position: absolute; left: 630px; top: 80px; width: 740px; height: 740px; animation-delay: 1.5s}
+.k36{width: 740px; height: 740px; display: block}
 .k37{position: absolute; left: 640px; top: 90px; width: 720px; height: 720px; animation-delay: 1.45s}
 .k38{width: 720px; height: 720px; display: block}
 .k39{position: absolute; left: 650px; top: 100px; width: 700px; height: 700px; animation-delay: 1.05s}
@@ -250,7 +254,7 @@ a:hover{color:inherit}
 .k47{animation-delay: 0.75s}
 .k48{animation-delay: 1.35s}
 .k49{animation-delay: 0.9s; animation-duration: 1.5s}
-.k50{font-stretch: 87.5%; letter-spacing: 0.02em; animation-delay: 1.6s}
+.k50{animation-delay: 1.6s}
 .k51{position: absolute; left: 730px; top: 180px; width: 540px; height: 540px; animation-delay: 1.2s}
 .k52{width: 540px; height: 540px; display: block}
 .k53{position: absolute; left: 750px; top: 200px; width: 500px; height: 500px; animation-delay: 1.7s}
@@ -274,146 +278,160 @@ a:hover{color:inherit}
 .k71{position: absolute; left: 560px; top: 324px; width: 1120px; height: 12px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.1) 28%, rgba(170,220,255,0.5) 50%, rgba(143,208,255,0.1) 72%, transparent); filter: blur(5px)}
 .k72{position: absolute; left: 520px; top: 329.5px; width: 1200px; height: 1px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.14) 25%, rgba(225,242,255,0.85) 50%, rgba(143,208,255,0.14) 75%, transparent)}
 .k73{position: absolute; left: 1090px; top: 300px; width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle, rgba(225,242,255,0.55), rgba(143,208,255,0.12) 40%, transparent 70%)}
-.k74{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; pointer-events: none; background: radial-gradient(ellipse 80% 90% at 62% 50%, transparent 55%, rgba(0,0,0,0.6) 100%)}
-.k75{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; overflow: hidden; pointer-events: none; opacity: 0.45}
-.k76{position: absolute; left: -10%; top: -10%; width: 120%; height: 120%}
-.k77{position: absolute; left: 0; top: 0; animation-delay: 2.6s}
-.k78{position: absolute; left: 0; top: 0; width: 1440px; height: 149px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-bottom: 1px solid rgba(220,231,247,0.3)}
-.k79{position: absolute; left: 0; top: 751px; width: 1440px; height: 149px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-top: 1px solid rgba(220,231,247,0.3)}
-.k80{position: absolute; left: 0; top: 449.5px; width: 1440px; height: 1px; background: linear-gradient(90deg, transparent, rgba(220,231,247,0.6) 25%, #ffffff 50%, rgba(220,231,247,0.6) 75%, transparent)}
-.k81{position: absolute; left: 72px; top: 34px; height: 24px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.1em; color: #8c97aa; animation-delay: 0.6s}
-.k82{width: 5px; height: 5px; background: #d8b46a}
-.k83{position: absolute; left: 0; top: 34px; width: 1440px; height: 24px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding-left: 0.9em; font-size: 11px; font-weight: 200; letter-spacing: 0.9em; color: rgba(220,231,247,0.72); animation-delay: 0.8s}
-.k84{position: absolute; right: 72px; top: 24px; min-height: 44px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.1em; animation-delay: 0.6s}
-.k85{position: absolute; left: 760px; top: 98px; width: 480px; height: 30px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); animation-delay: 2.5s}
-.k86{width: 1922px; height: 30px; position: absolute; left: 0; top: 0}
-.k87{position: absolute; left: 0; top: 0; animation-delay: 2.5s}
-.k88{position: absolute; left: 1262px; top: 104px; height: 20px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.7s}
-.k89{display: inline-flex; height: 12px; line-height: 12px; color: #e6edf7}
-.k90{position: absolute; left: 0; top: 762px; overflow: visible; animation-delay: 2.7s}
-.k91{position: absolute; left: 69px; top: 762px; width: 7px; height: 20px; animation-delay: 2.7s}
-.k92{width: 7px; height: 20px}
-.k93{position: absolute; left: 72px; top: 800px; width: 1296px; height: 44px; display: flex; align-items: center; gap: 36px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.8s}
-.k94{display: flex; gap: 10px}
-.k95{color: #e6edf7}
-.k96{overflow: visible}
-.k97{flex-grow: 1}
-.k98{position: absolute; left: 108px; top: 332px; display: flex; flex-direction: column; align-items: flex-start}
-.k99{display: flex; align-items: center; gap: 12px; height: 20px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 12px; letter-spacing: 0.06em; animation-delay: 2.15s}
-.k100{width: 7px; height: 7px; background: #d8b46a; transform: rotate(45deg)}
-.k101{position: relative; display: inline-block}
-.k102{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.15s}
-.k103{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.21s}
-.k104{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.27s}
-.k105{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.33s}
-.k106{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.39s}
-.k107{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.45s}
-.k108{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.51s}
-.k109{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.57s}
-.k110{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.63s}
-.k111{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.69s}
-.k112{margin: 18px 0 0; font-size: 80px; line-height: 1; font-weight: 300; letter-spacing: -0.02em; white-space: nowrap; animation-delay: 2.2s; animation-duration: 0.4s}
-.k113{position: relative; display: inline-block; width: 438px}
-.k114{display: inline-block}
-.k115{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.20s}
-.k116{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.26s}
-.k117{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.32s}
-.k118{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.38s}
-.k119{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.44s}
-.k120{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.50s}
-.k121{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.56s}
-.k122{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.62s}
-.k123{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.68s}
-.k124{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.74s}
-.k125{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.80s}
-.k126{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.86s}
-.k127{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.92s}
-.k128{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.98s}
-.k129{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 3.04s}
-.k130{color: #d8b46a}
-.k131{position: relative; margin-top: 30px; width: 420px; height: 1px; background: rgba(220,231,247,0.22); animation-delay: 2.4s}
-.k132{position: absolute; left: 0; top: -1px; width: 48px; height: 3px; background: #d8b46a}
-.k133{position: absolute; left: 140px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
-.k134{position: absolute; left: 280px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
-.k135{position: absolute; right: 0; top: -4px; width: 1px; height: 9px; background: rgba(220,231,247,0.5)}
-.k136{margin-top: 28px; display: flex; align-items: center; gap: 22px; animation-delay: 2.6s}
-.k137{position: relative; display: flex; align-items: center; justify-content: space-between; width: 248px; height: 58px; box-sizing: border-box; padding: 0 20px 0 24px; font-size: 16px; font-weight: 400}
-.k138{position: absolute; left: 0; top: 0; overflow: visible}
-.k139{position: relative}
-.k140{font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa}
-.k141{position: relative; width: 390px; height: 844px; overflow: hidden; background: #020408; color: #e6edf7; font-family: Unbounded, 'Helvetica Neue', sans-serif}
-.k142{position: absolute; left: 0; top: 0; width: 390px; height: 844px}
-.k143{position: absolute; left: 0; top: 0; filter: blur(0.5px); animation-delay: 0.3s; animation-duration: 2s}
-.k144{position: absolute; left: 0; top: 0; animation-delay: 0.5s; animation-duration: 2s}
-.k145{position: absolute; left: 0; top: 0; animation-delay: 0.7s; animation-duration: 2s}
-.k146{position: absolute; left: 0; top: 0; animation-delay: 1.9s; animation-duration: 2.4s}
-.k147{position: absolute; left: 0; top: 0; animation-delay: 2s; animation-duration: 1.6s}
-.k148{position: absolute; left: 0; top: 0; width: 390px; height: 844px; perspective: 900px; perspective-origin: 195px 318px; animation-delay: 2.1s}
-.k149{position: absolute; left: -41px; top: 82px; width: 472px; height: 472px; transform: rotateZ(-18deg) rotateX(62deg); transform-style: preserve-3d}
-.k150{width: 6px; height: 6px; border-radius: 50%; background: #d8b46a; box-shadow: 0 0 8px #d8b46a, 0 0 2px #ffffff; transform: rotateX(-62deg) rotateZ(18deg)}
-.k151{position: absolute; left: -87px; top: 36px; width: 564px; height: 564px; transform: rotateZ(28deg) rotateX(70deg); transform-style: preserve-3d}
-.k152{width: 5px; height: 5px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 6px rgba(143,208,255,0.9); transform: rotateX(-70deg) rotateZ(-28deg)}
-.k153{position: absolute; left: -129px; top: -6px; width: 648px; height: 648px; transform: rotateZ(8deg) rotateX(79deg); transform-style: preserve-3d}
-.k154{position: absolute; right: -2px; top: 50%; width: 4px; height: 4px; margin-top: -2px; transform-style: preserve-3d}
-.k155{width: 4px; height: 4px; transform-style: preserve-3d}
-.k156{width: 4px; height: 4px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 5px rgba(143,208,255,0.8); transform: rotateX(-79deg) rotateZ(-8deg)}
-.k157{position: absolute; left: -25px; top: 98px; width: 440px; height: 440px; animation-delay: 1.3s; animation-duration: 1.6s}
-.k158{width: 440px; height: 440px; display: block}
-.k159{position: absolute; left: -15px; top: 108px; width: 420px; height: 420px; animation-delay: 1.5s}
-.k160{width: 420px; height: 420px; display: block}
-.k161{position: absolute; left: -5px; top: 118px; width: 400px; height: 400px; animation-delay: 1.45s}
-.k162{width: 400px; height: 400px; display: block}
-.k163{position: absolute; left: -5px; top: 118px; width: 400px; height: 400px; animation-delay: 1.05s}
-.k164{position: absolute; left: 65px; top: 188px; width: 260px; height: 260px; animation-delay: 1.9s; animation-duration: 1.8s}
-.k165{width: 260px; height: 260px; display: block; -webkit-mask-image: radial-gradient(circle 120px at 50% 50%, #000 103px, transparent 120px); mask-image: radial-gradient(circle 120px at 50% 50%, #000 103px, transparent 120px)}
-.k166{position: absolute; left: 45px; top: 168px; width: 300px; height: 300px; animation-delay: 1.2s}
-.k167{width: 300px; height: 300px; display: block}
-.k168{position: absolute; left: 60px; top: 183px; width: 270px; height: 270px; animation-delay: 1.7s}
-.k169{width: 270px; height: 270px; display: block}
-.k170{position: absolute; left: 70px; top: 193px; width: 250px; height: 250px; animation-delay: 2.1s}
-.k171{width: 250px; height: 250px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 30deg, transparent 30.5deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 30deg, transparent 30.5deg)}
-.k172{width: 250px; height: 250px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 20deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 20deg)}
-.k173{position: absolute; left: 93px; top: 216px; width: 204px; height: 204px; animation-delay: 2s}
-.k174{width: 204px; height: 204px; position: absolute; left: 0; top: 0; filter: drop-shadow(0 0 2px #d8b46a); -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 70deg, transparent 70.5deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 70deg, transparent 70.5deg)}
-.k175{width: 204px; height: 204px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 40deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 40deg)}
-.k176{position: absolute; left: 103px; top: 226px; width: 184px; height: 184px}
-.k177{position: absolute; left: 0; top: 0; width: 184px; height: 184px; border-radius: 50%; overflow: hidden; isolation: isolate; background: #000000; box-shadow: 0 0 0 1px rgba(220,231,247,0.35), 0 0 44px rgba(143,208,255,0.14)}
-.k178{position: absolute; left: 0; top: 0; width: 184px; height: 184px}
-.k179{position: absolute; left: 0; top: 0; width: 184px; height: 184px; mix-blend-mode: screen}
-.k180{position: absolute; left: 0; top: 0; width: 184px; height: 184px; background: repeating-linear-gradient(to bottom, rgba(2,4,8,0.1) 0, rgba(2,4,8,0.1) 1px, transparent 1px, transparent 3px)}
-.k181{position: absolute; left: 0; top: -44px; width: 184px; height: 44px; background: linear-gradient(to bottom, transparent, rgba(143,208,255,0.13)); border-bottom: 1px solid rgba(190,228,255,0.5)}
-.k182{position: absolute; left: 0; top: 0; width: 184px; height: 184px; border-radius: 50%; box-shadow: inset -5px 5px 10px -4px rgba(214,236,255,0.55), inset 16px -13px 32px -8px rgba(2,4,8,0.6)}
-.k183{position: absolute; left: 0; top: 0; width: 390px; height: 844px; pointer-events: none; mix-blend-mode: screen}
-.k184{position: absolute; left: 0; top: 0; width: 390px; height: 844px; animation-delay: 1.7s; animation-duration: 2.2s}
-.k185{position: absolute; left: -40px; top: 248px; width: 600px; height: 9px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.1) 28%, rgba(170,220,255,0.5) 50%, rgba(143,208,255,0.1) 72%, transparent); filter: blur(4px)}
-.k186{position: absolute; left: -60px; top: 252.5px; width: 640px; height: 1px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.14) 25%, rgba(225,242,255,0.85) 50%, rgba(143,208,255,0.14) 75%, transparent)}
-.k187{position: absolute; left: 240px; top: 233px; width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, rgba(225,242,255,0.55), rgba(143,208,255,0.12) 40%, transparent 70%)}
-.k188{position: absolute; left: 0; top: 0; width: 390px; height: 844px; pointer-events: none; background: radial-gradient(ellipse 90% 60% at 50% 38%, transparent 55%, rgba(0,0,0,0.6) 100%)}
-.k189{position: absolute; left: 0; top: 0; width: 390px; height: 844px; overflow: hidden; pointer-events: none; opacity: 0.45}
-.k190{position: absolute; left: 0; top: 0; width: 390px; height: 108px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-bottom: 1px solid rgba(220,231,247,0.3)}
-.k191{position: absolute; left: 0; top: 528px; width: 390px; height: 316px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-top: 1px solid rgba(220,231,247,0.3)}
-.k192{position: absolute; left: 0; top: 317.5px; width: 390px; height: 1px; background: linear-gradient(90deg, transparent, rgba(220,231,247,0.6) 25%, #ffffff 50%, rgba(220,231,247,0.6) 75%, transparent)}
-.k193{position: absolute; left: 20px; top: 20px; height: 24px; display: flex; align-items: center; gap: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 0.6s}
-.k194{width: 4px; height: 4px; background: #d8b46a}
-.k195{position: absolute; left: 0; top: 20px; width: 390px; height: 24px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding-left: 0.7em; font-size: 9px; font-weight: 200; letter-spacing: 0.7em; color: rgba(220,231,247,0.72); animation-delay: 0.8s}
-.k196{position: absolute; right: 20px; top: 10px; min-height: 44px; display: flex; align-items: center; gap: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; animation-delay: 0.6s}
-.k197{position: absolute; left: 95px; top: 62px; width: 200px; height: 26px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); animation-delay: 2.5s}
-.k198{width: 1322px; height: 26px; position: absolute; left: -20px; top: 0}
-.k199{position: absolute; left: 304px; top: 66px; height: 16px; display: flex; align-items: center; gap: 6px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 8px; letter-spacing: 0.06em; color: #8c97aa; animation-delay: 2.7s}
-.k200{display: inline-flex; height: 11px; line-height: 11px; color: #e6edf7}
-.k201{position: absolute; left: 20px; top: 548px; width: 350px; display: flex; flex-direction: column; align-items: stretch}
-.k202{display: flex; align-items: center; gap: 10px; height: 18px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 11px; letter-spacing: 0.06em; animation-delay: 2.15s}
-.k203{width: 6px; height: 6px; background: #d8b46a; transform: rotate(45deg)}
-.k204{margin: 10px 0 0; font-size: 58px; line-height: 1; font-weight: 300; letter-spacing: -0.02em; white-space: nowrap; animation-delay: 2.2s; animation-duration: 0.4s}
-.k205{position: relative; display: inline-block; width: 318px}
-.k206{position: relative; margin-top: 18px; height: 1px; background: rgba(220,231,247,0.22); animation-delay: 2.4s}
-.k207{position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #d8b46a}
-.k208{position: absolute; left: 116px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
-.k209{position: absolute; left: 233px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
-.k210{position: relative; margin-top: 16px; display: flex; align-items: center; justify-content: space-between; height: 54px; box-sizing: border-box; padding: 0 18px 0 22px; font-size: 15px; font-weight: 400; animation-delay: 2.6s}
-.k211{margin-top: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.7s}
-.k212{position: absolute; left: 20px; top: 766px; width: 350px; height: 20px; display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.8s}
-.k213{display: flex; gap: 8px}
-.k214{position: absolute; left: 20px; top: 792px; width: 350px; height: 44px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 8px; letter-spacing: 0.06em; color: #e6edf7; animation-delay: 2.8s}
-.k215{overflow: visible; flex-shrink: 0}
-.k216{display: flex; gap: 6px; white-space: nowrap}
+.k74{position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none}
+.k75{position: absolute; left: 0; top: 0; width: 1440px; height: 900px; transform-origin: 0 0; transform: translate(0, calc(var(--ty) * 1px)) scale(var(--st)); pointer-events: none}
+.k76{pointer-events: auto; position: absolute; left: 108px; top: 332px; display: flex; flex-direction: column; align-items: flex-start}
+.k77{display: flex; align-items: center; gap: 12px; height: 20px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 12px; letter-spacing: 0.06em; animation-delay: 2.15s}
+.k78{width: 7px; height: 7px; background: #d8b46a; transform: rotate(45deg)}
+.k79{position: relative; display: inline-block}
+.k80{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.15s}
+.k81{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.21s}
+.k82{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.27s}
+.k83{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.33s}
+.k84{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.39s}
+.k85{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.45s}
+.k86{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.51s}
+.k87{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.57s}
+.k88{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.63s}
+.k89{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.69s}
+.k90{margin: 18px 0 0; font-size: 80px; line-height: 1; font-weight: 300; letter-spacing: -0.02em; white-space: nowrap; animation-delay: 2.2s; animation-duration: 0.4s}
+.k91{position: relative; display: inline-block; width: 438px}
+.k92{display: inline-block}
+.k93{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.20s}
+.k94{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.26s}
+.k95{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.32s}
+.k96{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.38s}
+.k97{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.44s}
+.k98{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.50s}
+.k99{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.56s}
+.k100{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.62s}
+.k101{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.68s}
+.k102{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.74s}
+.k103{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.80s}
+.k104{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.86s}
+.k105{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.92s}
+.k106{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 2.98s}
+.k107{position: absolute; left: 0; top: 0; white-space: nowrap; animation-delay: 3.04s}
+.k108{color: #d8b46a}
+.k109{position: relative; margin-top: 30px; width: 420px; height: 1px; background: rgba(220,231,247,0.22); animation-delay: 2.4s}
+.k110{position: absolute; left: 0; top: -1px; width: 48px; height: 3px; background: #d8b46a}
+.k111{position: absolute; left: 140px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
+.k112{position: absolute; left: 280px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
+.k113{position: absolute; right: 0; top: -4px; width: 1px; height: 9px; background: rgba(220,231,247,0.5)}
+.k114{margin-top: 28px; display: flex; align-items: center; gap: 22px; animation-delay: 2.6s}
+.k115{position: relative; display: flex; align-items: center; justify-content: space-between; width: 248px; height: 58px; box-sizing: border-box; padding: 0 20px 0 24px; font-size: 16px; font-weight: 400}
+.k116{position: absolute; left: 0; top: 0; overflow: visible}
+.k117{position: relative}
+.k118{font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa}
+.k119{position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 80% 90% at calc(var(--cxp) * 1%) 50%, transparent 55%, rgba(0,0,0,0.6) 100%)}
+.k120{position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0.45}
+.k121{position: absolute; left: -10%; top: -10%; width: 120%; height: 120%}
+.k122{position: absolute; inset: 0; pointer-events: none; animation-delay: 2.6s}
+.k123{position: absolute; left: 72px; top: 148px; width: calc(100% - 144px); height: calc(100% - 296px); overflow: visible}
+.k124{position: absolute; left: 16px; top: 134px; width: 14px; height: 14px; border-left: 1px solid rgba(220,231,247,0.5); border-top: 1px solid rgba(220,231,247,0.5)}
+.k125{position: absolute; right: 16px; top: 134px; width: 14px; height: 14px; border-right: 1px solid rgba(220,231,247,0.5); border-top: 1px solid rgba(220,231,247,0.5)}
+.k126{position: absolute; left: 16px; bottom: 134px; width: 14px; height: 14px; border-left: 1px solid rgba(220,231,247,0.5); border-bottom: 1px solid rgba(220,231,247,0.5)}
+.k127{position: absolute; right: 16px; bottom: 134px; width: 14px; height: 14px; border-right: 1px solid rgba(220,231,247,0.5); border-bottom: 1px solid rgba(220,231,247,0.5)}
+.k128{position: absolute; left: calc(50% - 6px); top: calc(var(--cy) * 1px - 6px)}
+.k129{position: absolute; left: 0; right: 0; top: 0; height: 118px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-bottom: 1px solid rgba(220,231,247,0.3)}
+.k130{position: absolute; left: 0; right: 0; bottom: 0; height: 118px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-top: 1px solid rgba(220,231,247,0.3)}
+.k131{position: absolute; left: 0; right: 0; top: calc(var(--cy) * 1px - 0.5px); height: 1px; background: linear-gradient(90deg, transparent, rgba(220,231,247,0.6) 25%, #ffffff 50%, rgba(220,231,247,0.6) 75%, transparent)}
+.k132{position: absolute; left: 72px; top: 26px; height: 24px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.1em; color: #8c97aa; animation-delay: 0.6s}
+.k133{width: 5px; height: 5px; background: #d8b46a}
+.k134{position: absolute; left: 0; right: 0; top: 26px; height: 24px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding-left: 0.9em; font-size: 11px; font-weight: 200; letter-spacing: 0.9em; color: rgba(220,231,247,0.72); animation-delay: 0.8s}
+.k135{position: absolute; right: 72px; top: 16px; min-height: 44px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.1em; animation-delay: 0.6s}
+.k136{position: absolute; left: calc(var(--cx) * 1px - 240px); top: 66px; width: 480px; height: 30px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); animation-delay: 2.5s}
+.k137{width: 1922px; height: 30px; position: absolute; left: 0; top: 0}
+.k138{position: absolute; left: calc(var(--cx) * 1px - 240px); top: 96px; width: 480px; height: 1px; background: rgba(220,231,247,0.18); animation-delay: 2.5s}
+.k139{position: absolute; left: calc(var(--cx) * 1px - 6px); top: 97px; animation-delay: 2.5s}
+.k140{position: absolute; left: calc(var(--cx) * 1px + 262px); top: 72px; height: 20px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.7s}
+.k141{display: inline-flex; height: 12px; line-height: 12px; color: #e6edf7}
+.k142{position: absolute; left: 72px; bottom: 78px; width: calc(100% - 144px); height: 30px; overflow: visible; animation-delay: 2.7s}
+.k143{position: absolute; left: 72px; right: 72px; bottom: 88px; height: 20px; pointer-events: none; animation-delay: 2.7s}
+.k144{width: 100%; height: 20px}
+.k145{display: block; margin-left: -3.5px}
+.k146{position: absolute; left: 72px; right: 72px; bottom: 18px; height: 44px; display: flex; align-items: center; gap: 36px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 10px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.8s}
+.k147{display: flex; gap: 10px}
+.k148{color: #e6edf7}
+.k149{overflow: visible}
+.k150{flex-grow: 1}
+.k151{position: absolute; inset: 0}
+.k152{position: absolute; left: 0; top: 0; filter: blur(0.5px); animation-delay: 0.3s; animation-duration: 2s}
+.k153{position: absolute; left: 0; top: 0; animation-delay: 0.5s; animation-duration: 2s}
+.k154{position: absolute; left: 0; top: 0; animation-delay: 0.7s; animation-duration: 2s}
+.k155{position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform-origin: 0 0; transform: translate(calc(var(--cx) * 1px - 195px * var(--si)), calc(var(--cy) * 1px - 318px * var(--si))) scale(var(--si)); pointer-events: none}
+.k156{position: absolute; left: 0; top: 0; animation-delay: 1.9s; animation-duration: 2.4s}
+.k157{position: absolute; left: 0; top: 0; animation-delay: 2s; animation-duration: 1.6s}
+.k158{position: absolute; left: 0; top: 0; width: 390px; height: 844px; perspective: 900px; perspective-origin: 195px 318px; animation-delay: 2.1s}
+.k159{position: absolute; left: -41px; top: 82px; width: 472px; height: 472px; transform: rotateZ(-18deg) rotateX(62deg); transform-style: preserve-3d}
+.k160{width: 6px; height: 6px; border-radius: 50%; background: #d8b46a; box-shadow: 0 0 8px #d8b46a, 0 0 2px #ffffff; transform: rotateX(-62deg) rotateZ(18deg)}
+.k161{position: absolute; left: -87px; top: 36px; width: 564px; height: 564px; transform: rotateZ(28deg) rotateX(70deg); transform-style: preserve-3d}
+.k162{width: 5px; height: 5px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 6px rgba(143,208,255,0.9); transform: rotateX(-70deg) rotateZ(-28deg)}
+.k163{position: absolute; left: -129px; top: -6px; width: 648px; height: 648px; transform: rotateZ(8deg) rotateX(79deg); transform-style: preserve-3d}
+.k164{position: absolute; right: -2px; top: 50%; width: 4px; height: 4px; margin-top: -2px; transform-style: preserve-3d}
+.k165{width: 4px; height: 4px; transform-style: preserve-3d}
+.k166{width: 4px; height: 4px; border-radius: 50%; background: #e9f2ff; box-shadow: 0 0 5px rgba(143,208,255,0.8); transform: rotateX(-79deg) rotateZ(-8deg)}
+.k167{position: absolute; left: -25px; top: 98px; width: 440px; height: 440px; animation-delay: 1.3s; animation-duration: 1.6s}
+.k168{width: 440px; height: 440px; display: block}
+.k169{position: absolute; left: -15px; top: 108px; width: 420px; height: 420px; animation-delay: 1.5s}
+.k170{width: 420px; height: 420px; display: block}
+.k171{position: absolute; left: -5px; top: 118px; width: 400px; height: 400px; animation-delay: 1.45s}
+.k172{width: 400px; height: 400px; display: block}
+.k173{position: absolute; left: -5px; top: 118px; width: 400px; height: 400px; animation-delay: 1.05s}
+.k174{position: absolute; left: 65px; top: 188px; width: 260px; height: 260px; animation-delay: 1.9s; animation-duration: 1.8s}
+.k175{width: 260px; height: 260px; display: block; -webkit-mask-image: radial-gradient(circle 120px at 50% 50%, #000 103px, transparent 120px); mask-image: radial-gradient(circle 120px at 50% 50%, #000 103px, transparent 120px)}
+.k176{position: absolute; left: 45px; top: 168px; width: 300px; height: 300px; animation-delay: 1.2s}
+.k177{width: 300px; height: 300px; display: block}
+.k178{position: absolute; left: 60px; top: 183px; width: 270px; height: 270px; animation-delay: 1.7s}
+.k179{width: 270px; height: 270px; display: block}
+.k180{position: absolute; left: 70px; top: 193px; width: 250px; height: 250px; animation-delay: 2.1s}
+.k181{width: 250px; height: 250px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 30deg, transparent 30.5deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 30deg, transparent 30.5deg)}
+.k182{width: 250px; height: 250px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 20deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 20deg)}
+.k183{position: absolute; left: 93px; top: 216px; width: 204px; height: 204px; animation-delay: 2s}
+.k184{width: 204px; height: 204px; position: absolute; left: 0; top: 0; filter: drop-shadow(0 0 2px #d8b46a); -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 70deg, transparent 70.5deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 70deg, transparent 70.5deg)}
+.k185{width: 204px; height: 204px; position: absolute; left: 0; top: 0; -webkit-mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 40deg); mask-image: conic-gradient(from 0deg, transparent 0deg, #000 0.5deg, transparent 40deg)}
+.k186{position: absolute; left: 103px; top: 226px; width: 184px; height: 184px}
+.k187{position: absolute; left: 0; top: 0; width: 184px; height: 184px; border-radius: 50%; overflow: hidden; isolation: isolate; background: #000000; box-shadow: 0 0 0 1px rgba(220,231,247,0.35), 0 0 44px rgba(143,208,255,0.14)}
+.k188{position: absolute; left: 0; top: 0; width: 184px; height: 184px}
+.k189{position: absolute; left: 0; top: 0; width: 184px; height: 184px; mix-blend-mode: screen}
+.k190{position: absolute; left: 0; top: 0; width: 184px; height: 184px; background: repeating-linear-gradient(to bottom, rgba(2,4,8,0.1) 0, rgba(2,4,8,0.1) 1px, transparent 1px, transparent 3px)}
+.k191{position: absolute; left: 0; top: -44px; width: 184px; height: 44px; background: linear-gradient(to bottom, transparent, rgba(143,208,255,0.13)); border-bottom: 1px solid rgba(190,228,255,0.5)}
+.k192{position: absolute; left: 0; top: 0; width: 184px; height: 184px; border-radius: 50%; box-shadow: inset -5px 5px 10px -4px rgba(214,236,255,0.55), inset 16px -13px 32px -8px rgba(2,4,8,0.6)}
+.k193{position: absolute; left: 0; top: 0; width: 390px; height: 844px; pointer-events: none; mix-blend-mode: screen}
+.k194{position: absolute; left: 0; top: 0; width: 390px; height: 844px; animation-delay: 1.7s; animation-duration: 2.2s}
+.k195{position: absolute; left: -40px; top: 248px; width: 600px; height: 9px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.1) 28%, rgba(170,220,255,0.5) 50%, rgba(143,208,255,0.1) 72%, transparent); filter: blur(4px)}
+.k196{position: absolute; left: -60px; top: 252.5px; width: 640px; height: 1px; background: linear-gradient(90deg, transparent, rgba(143,208,255,0.14) 25%, rgba(225,242,255,0.85) 50%, rgba(143,208,255,0.14) 75%, transparent)}
+.k197{position: absolute; left: 240px; top: 233px; width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, rgba(225,242,255,0.55), rgba(143,208,255,0.12) 40%, transparent 70%)}
+.k198{position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 90% 60% at 50% calc(var(--cyp) * 1%), transparent 55%, rgba(0,0,0,0.6) 100%)}
+.k199{position: absolute; left: 12px; top: 120px; width: 13px; height: 13px; border-left: 1px solid rgba(220,231,247,0.5); border-top: 1px solid rgba(220,231,247,0.5)}
+.k200{position: absolute; right: 12px; top: 120px; width: 13px; height: 13px; border-right: 1px solid rgba(220,231,247,0.5); border-top: 1px solid rgba(220,231,247,0.5)}
+.k201{position: absolute; left: 12px; bottom: 328px; width: 13px; height: 13px; border-left: 1px solid rgba(220,231,247,0.5); border-bottom: 1px solid rgba(220,231,247,0.5)}
+.k202{position: absolute; right: 12px; bottom: 328px; width: 13px; height: 13px; border-right: 1px solid rgba(220,231,247,0.5); border-bottom: 1px solid rgba(220,231,247,0.5)}
+.k203{position: absolute; left: 0; right: 0; top: 0; height: 108px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-bottom: 1px solid rgba(220,231,247,0.3)}
+.k204{position: absolute; left: 0; right: 0; bottom: 0; height: 316px; box-sizing: border-box; background: rgba(2,4,8,0.965); border-top: 1px solid rgba(220,231,247,0.3)}
+.k205{position: absolute; left: 20px; top: 20px; height: 24px; display: flex; align-items: center; gap: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 0.6s}
+.k206{width: 4px; height: 4px; background: #d8b46a}
+.k207{position: absolute; left: 0; right: 0; top: 20px; height: 24px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding-left: 0.7em; font-size: 9px; font-weight: 200; letter-spacing: 0.7em; color: rgba(220,231,247,0.72); animation-delay: 0.8s}
+.k208{position: absolute; right: 20px; top: 10px; min-height: 44px; display: flex; align-items: center; gap: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; animation-delay: 0.6s}
+.k209{position: absolute; left: calc(var(--cx) * 1px - 100px); top: 62px; width: 200px; height: 26px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); animation-delay: 2.5s}
+.k210{width: 1322px; height: 26px; position: absolute; left: -20px; top: 0}
+.k211{position: absolute; left: calc(var(--cx) * 1px - 100px); top: 88px; width: 200px; height: 1px; background: rgba(220,231,247,0.18); animation-delay: 2.5s}
+.k212{position: absolute; left: calc(var(--cx) * 1px - 5px); top: 89px; animation-delay: 2.5s}
+.k213{position: absolute; left: calc(var(--cx) * 1px + 109px); top: 66px; height: 16px; display: flex; align-items: center; gap: 6px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 8px; letter-spacing: 0.06em; color: #8c97aa; animation-delay: 2.7s}
+.k214{display: inline-flex; height: 11px; line-height: 11px; color: #e6edf7}
+.k215{position: absolute; left: calc(var(--cx) * 1px - 175px); width: 350px; top: calc(var(--H) * 1px - 296px); display: flex; flex-direction: column; align-items: stretch}
+.k216{display: flex; align-items: center; gap: 10px; height: 18px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 11px; letter-spacing: 0.06em; animation-delay: 2.15s}
+.k217{width: 6px; height: 6px; background: #d8b46a; transform: rotate(45deg)}
+.k218{margin: 10px 0 0; font-size: 58px; line-height: 1; font-weight: 300; letter-spacing: -0.02em; white-space: nowrap; animation-delay: 2.2s; animation-duration: 0.4s}
+.k219{position: relative; display: inline-block; width: 318px}
+.k220{position: relative; margin-top: 18px; height: 1px; background: rgba(220,231,247,0.22); animation-delay: 2.4s}
+.k221{position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: #d8b46a}
+.k222{position: absolute; left: 116px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
+.k223{position: absolute; left: 233px; top: -2px; width: 1px; height: 5px; background: rgba(220,231,247,0.35)}
+.k224{position: relative; margin-top: 16px; display: flex; align-items: center; justify-content: space-between; height: 54px; box-sizing: border-box; padding: 0 18px 0 22px; font-size: 15px; font-weight: 400; animation-delay: 2.6s}
+.k225{margin-top: 8px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.7s}
+.k226{position: absolute; left: calc(var(--cx) * 1px - 175px); top: calc(var(--H) * 1px - 78px); width: 350px; height: 20px; display: flex; align-items: center; justify-content: space-between; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 9px; letter-spacing: 0.08em; color: #8c97aa; animation-delay: 2.8s}
+.k227{display: flex; gap: 8px}
+.k228{position: absolute; left: calc(var(--cx) * 1px - 175px); top: calc(var(--H) * 1px - 52px); width: 350px; height: 44px; display: flex; align-items: center; gap: 10px; font-family: 'Martian Mono', monospace; font-stretch: 87.5%; font-size: 8px; letter-spacing: 0.06em; color: #e6edf7; animation-delay: 2.8s}
+.k229{overflow: visible; flex-shrink: 0}
+.k230{display: flex; gap: 6px; white-space: nowrap}
