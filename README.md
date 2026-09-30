@@ -2,12 +2,15 @@
 
 [hsincode.com](https://hsincode.com)
 
-静的な個人サイトです。本番トップの `public/index.html` にはB案（Resonance）を採用しています。
+静的な個人サイトです。本番トップの `public/index.html` にはJ案（Apogee）を採用しています。
 
 A案（Trace）・B案（Resonance）・C案（Tactile）は `public/samples/` に保存しています。[比較ページ](https://hsincode.com/samples/) から確認できます。
 
-本番とモックは `public/samples/samples.css` と `public/samples/motion.js` を共用します。
-ローカル確認: `npx serve public`。波形はCanvas、C案の3D表現はThree.jsを使用します。
+本番トップのCSS・JS・画像は `public/assets/apogee/` にあります。動きはすべてCSSで、JSは今日の月齢の表示、UTC時計の同期、画面サイズに合わせた拡大縮小だけを行います。
+目盛りや模様の座標は計算で生成した値を `index.html` に埋め込んでいます。
+フォントのUnboundedとMartian Mono（どちらもOFL）は `public/assets/` に置いています。
+サンプルは `public/samples/samples.css` と `public/samples/motion.js` を使います。
+ローカル確認: `bunx serve public`。波形はCanvas、C案の3D表現はThree.jsを使用します。
 
 Vercelで `public` ディレクトリを公開します。
 
